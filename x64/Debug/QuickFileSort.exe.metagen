@@ -1,0 +1,84 @@
+  QuickFileSort.AlphabeticOptions.resources - Embedded, ContainedInManifestFile, 
+  QuickFileSort.DateOptions.resources - Embedded, ContainedInManifestFile, 
+  QuickFileSort.Form1.resources - Embedded, ContainedInManifestFile, 
+  QuickFileSort.ManualDestination.resources - Embedded, ContainedInManifestFile, 
+  QuickFileSort.Step1.resources - Embedded, ContainedInManifestFile, 
+  QuickFileSort.Step2.resources - Embedded, ContainedInManifestFile, 
+  QuickFileSort.Step3.resources - Embedded, ContainedInManifestFile, 
+  QuickFileSort.Warning1.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly QuickFileSort, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class QuickFileSort.AlphabeticOptions: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.RadioButton AlphabeticChoiseUp : Public
+    System.Windows.Forms.RadioButton AlphabeticChoiseLow : Public
+    System.Windows.Forms.NumericUpDown LettersCount : Public
+Class QuickFileSort.Warning1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.MaskedTextBox textBox1 : Public
+Class QuickFileSort.Step1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Button ButtonTargetFolder : Public
+    System.Windows.Forms.TextBox TargetTextBox : Public
+    System.Windows.Forms.Button ButtonNext : Public
+    System.Windows.Forms.RadioButton ChoiceAutomatic : Public
+    System.Windows.Forms.RadioButton ChoiceManual : Public
+Class QuickFileSort.Step2: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.Button ButtonDestination : Public
+    System.Windows.Forms.TextBox DestinationTextBox : Public
+    System.Windows.Forms.Button ButtonBack : Public
+    System.Windows.Forms.Button ButtonBeginSort : Public
+    System.Windows.Forms.ComboBox AutomaticType : Public
+Class QuickFileSort.ManualDestination: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.UserControl
+    Void .ctor(std.filesystem.path*, std.basic_string<char\,std::char_traits<char>\,std::allocator<char> >*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.CheckBox DestinationSelected : Public
+    System.Windows.Forms.Button DeleteButton : Public
+    std.filesystem.path* DestinationDirectory : Public
+Class QuickFileSort.Step3: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(std.basic_string<wchar_t\,std::char_traits<wchar_t>\,std::allocator<wchar_t> >*): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.PictureBox PicturePreview : Public
+    System.Windows.Forms.Button AddDestination : Public
+    System.Windows.Forms.FlowLayoutPanel ListDestinations : Public
+    System.Windows.Forms.Button CopyCurrentFile : Public
+    UInt32 ManualDestCount : Public
+    std.filesystem.directory_iterator* FileCycler : Public
+    System.Windows.Forms.Button BackButton : Public
+    System.Windows.Forms.Label FileNamePreview : Public
+    System.Windows.Forms.RichTextBox TextPreivew : Public
+Class QuickFileSort.DateOptions: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.CheckBox YearDivision : Public
+    System.Windows.Forms.CheckBox MonthDivision : Public
+    System.Windows.Forms.CheckBox DayDivision : Public
+    System.Windows.Forms.ComboBox DateType : Public
+Class CppCLRWinFormsProject.Form1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
