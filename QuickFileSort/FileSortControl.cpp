@@ -23,7 +23,7 @@ const void QuickFileSort::FileSortControl::CreateNewFolder()
 
 const void QuickFileSort::FileSortControl::CopyToSorted()
 {
-	if((FileName.parent_path() / SortedFolderName) != (DestinationDirectory / SortedFolderName))
+	if(std::filesystem::exists(DestinationDirectory / SortedFolderName))
 	{
 		std::filesystem::copy(FileName, DestinationDirectory / SortedFolderName, std::filesystem::copy_options::skip_existing);
 	}

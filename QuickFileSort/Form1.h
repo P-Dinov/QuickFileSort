@@ -84,22 +84,20 @@ namespace CppCLRWinFormsProject {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-
 			this->SuspendLayout();
-
-			
-			//// 
-			//// Form1
+			// 
+			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSizeMode = System::Windows::Forms::AutoSizeMode::GrowAndShrink;
-			this->ClientSize = System::Drawing::Size(374, 176);
-
+			this->ClientSize = System::Drawing::Size(404, 206);
 			this->Name = L"Form1";
+			this->ShowIcon = false;
+			this->SizeGripStyle = System::Windows::Forms::SizeGripStyle::Show;
 			this->Text = L"Quick Sort";
+			this->Layout += gcnew System::Windows::Forms::LayoutEventHandler(this, &Form1::Form1_Layout);
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 
@@ -135,7 +133,7 @@ namespace CppCLRWinFormsProject {
 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(374, 276);
+			this->ClientSize = System::Drawing::Size(404, 306);
 
 			this->Step2_1->ButtonDestination->Click += gcnew System::EventHandler(this, &Form1::ButtonDestination_Click);
 			this->Step2_1->ButtonBack->Click += gcnew System::EventHandler(this, &Form1::ButtonBackToStepOne);
@@ -436,5 +434,14 @@ private: System::Void ButtonBeginSort_Click(System::Object^ sender, System::Even
 	selectedFile = nullptr;
 }
 
+private: System::Void Form1_Layout(System::Object^ sender, System::Windows::Forms::LayoutEventArgs^ e) {
+
+	System::Windows::Forms::Control^ updated_form = (System::Windows::Forms::Control^)sender;
+
+	for each (System::Windows::Forms::Control ^ var in updated_form->Controls)
+	{
+		var->Size = System::Drawing::Size( updated_form->Size.Width - 50, updated_form->Size.Height - 50);
+	}
+}
 };
 }

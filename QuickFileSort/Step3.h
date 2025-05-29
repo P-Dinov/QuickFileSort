@@ -116,6 +116,9 @@ namespace QuickFileSort {
 			// 
 			// PicturePreview
 			// 
+			this->PicturePreview->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->PicturePreview->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->PicturePreview->ImageLocation = L"";
 			this->PicturePreview->Location = System::Drawing::Point(12, 77);
@@ -128,7 +131,8 @@ namespace QuickFileSort {
 			// 
 			// AddDestination
 			// 
-			this->AddDestination->Location = System::Drawing::Point(344, 56);
+			this->AddDestination->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
+			this->AddDestination->Location = System::Drawing::Point(344, 51);
 			this->AddDestination->Name = L"AddDestination";
 			this->AddDestination->Size = System::Drawing::Size(75, 23);
 			this->AddDestination->TabIndex = 2;
@@ -139,6 +143,8 @@ namespace QuickFileSort {
 			// ListDestinations
 			// 
 			this->ListDestinations->AllowDrop = true;
+			this->ListDestinations->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->ListDestinations->AutoScroll = true;
 			this->ListDestinations->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->ListDestinations->Location = System::Drawing::Point(274, 92);
@@ -150,6 +156,7 @@ namespace QuickFileSort {
 			// 
 			// CopyCurrentFile
 			// 
+			this->CopyCurrentFile->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->CopyCurrentFile->Location = System::Drawing::Point(137, 397);
 			this->CopyCurrentFile->Name = L"CopyCurrentFile";
 			this->CopyCurrentFile->Size = System::Drawing::Size(75, 23);
@@ -170,6 +177,7 @@ namespace QuickFileSort {
 			// 
 			// FileNamePreview
 			// 
+			this->FileNamePreview->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->FileNamePreview->AutoSize = true;
 			this->FileNamePreview->Location = System::Drawing::Point(99, 56);
 			this->FileNamePreview->Name = L"FileNamePreview";
@@ -179,6 +187,9 @@ namespace QuickFileSort {
 			// 
 			// TextPreivew
 			// 
+			this->TextPreivew->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->TextPreivew->Enabled = false;
 			this->TextPreivew->Location = System::Drawing::Point(11, 77);
 			this->TextPreivew->Name = L"TextPreivew";
@@ -190,6 +201,7 @@ namespace QuickFileSort {
 			// 
 			// SkipButton
 			// 
+			this->SkipButton->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->SkipButton->Location = System::Drawing::Point(24, 413);
 			this->SkipButton->Name = L"SkipButton";
 			this->SkipButton->Size = System::Drawing::Size(75, 23);
@@ -200,6 +212,7 @@ namespace QuickFileSort {
 			// 
 			// NoChoiseWarning
 			// 
+			this->NoChoiseWarning->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->NoChoiseWarning->AutoSize = true;
 			this->NoChoiseWarning->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
@@ -212,6 +225,7 @@ namespace QuickFileSort {
 			// 
 			// label1
 			// 
+			this->label1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Right));
 			this->label1->AutoSize = true;
 			this->label1->Enabled = false;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7));
@@ -223,6 +237,7 @@ namespace QuickFileSort {
 			// 
 			// MoveCurrentFile
 			// 
+			this->MoveCurrentFile->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->MoveCurrentFile->Location = System::Drawing::Point(137, 441);
 			this->MoveCurrentFile->Name = L"MoveCurrentFile";
 			this->MoveCurrentFile->Size = System::Drawing::Size(75, 23);
@@ -240,13 +255,13 @@ namespace QuickFileSort {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->NoChoiseWarning);
 			this->Controls->Add(this->SkipButton);
-			this->Controls->Add(this->TextPreivew);
 			this->Controls->Add(this->FileNamePreview);
 			this->Controls->Add(this->BackButton);
 			this->Controls->Add(this->CopyCurrentFile);
 			this->Controls->Add(this->ListDestinations);
 			this->Controls->Add(this->AddDestination);
 			this->Controls->Add(this->PicturePreview);
+			this->Controls->Add(this->TextPreivew);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Step3";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
@@ -420,6 +435,8 @@ protected: void TextPreviewUpdate(void)
 	
 		TextPreivew->Visible = true;
 		TextPreivew->Text = L"";
+		if ((*FileCycler)->path().extension() != ".txt")
+			return;
 
 		std::wifstream TextRead((*FileCycler)->path().wstring());
 		std::wstring TextNew;
@@ -489,7 +506,7 @@ private: System::Void PicturePreview_LoadCompleted(System::Object^ sender, Syste
 	if (PicturePreview->Image == PicturePreview->ErrorImage)
 	{
 		PicturePreview->Visible = false;
-		//TextPreviewUpdate();
+		TextPreviewUpdate();
 	}
 
 	
