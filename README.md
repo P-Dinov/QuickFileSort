@@ -3,7 +3,7 @@
 <br/>
 <br/>
 <br/>
-
+[Click here to download](https://github.com/P-Dinov/QuickFileSort/releases/download/v1.1/QuickFileSort.rar)
 <hr>
 
 <br/>
